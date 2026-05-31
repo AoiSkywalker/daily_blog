@@ -2,6 +2,7 @@
 The sum of a and b, using bitwise operators.
 
 Input : Integer a, b. 0 ≤ a, b ≤ 100
+Output: Sum of a and b
 
 ## Hint
 Using recursion

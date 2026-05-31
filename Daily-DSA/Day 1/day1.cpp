@@ -2,7 +2,7 @@
  *  A + B Problem
  */
 
-class Solution {
+class Day1 {
     public:
         int sum(int a, int b) {
             if (a == 0) return b;
