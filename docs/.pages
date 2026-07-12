@@ -1,0 +1,6 @@
+nav:
+  - Home: index.md
+  - daily_dsa
+  - daily_cyber
+  - Tags: tags.md
+  - About Me: about.md

@@ -1,4 +1,8 @@
-# TWO SUM
+---
+categories:
+  - daily_dsa
+---
+# DAY 2: TWO SUM
 Given an array of integers, find two numbers such that they add up to a specific target number. You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 Input : Array of integers
@@ -20,3 +24,11 @@ The hash lookup takes O(1) time, so maybe you should consider using a hash table
 In the array `numbers`, we should find `x` that `x = target - numbers[i]`
 
 First, we iterates all the array. At each `numbers[i]`, we push a key-value `x : index of numbers[i]`. When finding the satisfied `numbers[i]` in `m`, we can return their indices.
+
+## Implementation
+
+### C/C++
+
+```cpp title="day2.cpp"
+--8<-- "docs/daily_dsa/day-02/day2.cpp"
+```
