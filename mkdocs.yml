@@ -4,6 +4,7 @@ site_url:   https://aoiskywalker.github.io/daily_blog/
 theme:
   name:     material
   language: en
+  custom_dir: overrides
   features: 
     - navigation.tabs
     - navigation.sections
@@ -11,6 +12,7 @@ theme:
     - navigation.instant
     - navigation.path
     - navigation.prune
+    - navigation.indexes
     - toc.follow
     # - toc.integrate
     - navigation.tracking
@@ -39,8 +41,8 @@ theme:
         icon:   material/weather-night
         name:   "Turn on light mode"
 
+
 plugins:
-  - search
   - tags:
       tags_file: tags.md
   - awesome-pages:

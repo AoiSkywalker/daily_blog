@@ -1,8 +1,12 @@
 ---
 categories:
   - daily_dsa
+title: "Day 1: A + B Problem"
+tags: 
+  - sum
+  - recursion
 ---
-# DAY 1: A + B Problem
+# DAY 1: A + B PROBLEM
 The sum of a and b, using bitwise operators.
 
 Input : Integer a, b. 0 ≤ a, b ≤ 100

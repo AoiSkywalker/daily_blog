@@ -1,11 +1,15 @@
 ---
 categories:
   - daily_dsa
+title: "Day 2: Two Sum"
+tags: 
+  - sum
+  - hash
 ---
 # DAY 2: TWO SUM
 Given an array of integers, find two numbers such that they add up to a specific target number. You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
-Input : Array of integers
+Input : Array of integers, Target number
 Output : Array of two indices of integers needed to find.
 
 ## Example

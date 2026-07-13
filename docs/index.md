@@ -1,17 +1,15 @@
 ---
-date: 2026-07-12
-authors: [lavender]
-categories:
-  - Security
-  - Tooling
+hide:
+ - toc
 ---
 
-# Bài viết đầu tiên trên MkDocs
+<style>
+  .md-sidebar.md-sidebar--primary {
+    display: none !important;
+  }
+</style>
 
-Chào mừng đến với trang blog cá nhân của mình. Đây là nơi mình chia sẻ về hành trình nghiên cứu Pwn, Reverse Engineering và các công cụ tối giản.
+# Getting Started
+This is the notebook of Computer Science written by Aoi Skywalker. For more information, following the navigation tab.
 
-## Test tính năng code block
-```python
-def hello_world():
-    print("Hello MkDocs Material!")
-```
+> Don't limit the challenge, let's challenge the limit.

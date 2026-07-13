@@ -1,0 +1,135 @@
+{% extends "main.html" %}
+
+{% block title %}404 - File Not Found{% endblock %}
+
+{% block content %}
+
+<div class="error-container">
+  <div class="ufo-space">
+    <svg width="240" height="200" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="beamLight" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Tractor Beam -->
+      <polygon class="tractor-beam" points="100,55 30,160 170,160" fill="url(#beamLight)" />
+      
+      <!-- UFO -->
+      <g class="ufo-ship">
+        <!-- Buồng lái kính -->
+        <path d="M70,50 C70,23 130,23 130,50 Z" fill="#b3e5fc" opacity="0.85"/>
+        
+        <!-- Đĩa bay chính -->
+        <ellipse cx="100" cy="55" rx="75" ry="16" fill="#607d8b" />
+        <ellipse cx="100" cy="51" rx="65" ry="10" fill="#78909c" />
+        
+        <!-- Các đèn tín hiệu nhấp nháy -->
+        <circle class="ufo-light l1" cx="45" cy="55" r="3.5" fill="#fffde7" />
+        <circle class="ufo-light l2" cx="72" cy="59" r="3.5" fill="#fffde7" />
+        <circle class="ufo-light l3" cx="100" cy="61" r="3.5" fill="#fffde7" />
+        <circle class="ufo-light l4" cx="128" cy="59" r="3.5" fill="#fffde7" />
+        <circle class="ufo-light l5" cx="155" cy="55" r="3.5" fill="#fffde7" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- NỘI DUNG THÔNG BÁO LỖI -->
+  <h1 class="error-title">404</h1>
+  <h2 class="error-subtitle">Alien stole my website!</h2>
+  <p class="error-text">Maybe you can find in other solar system !</p>
+  
+  <a href="{{ config.site_url | default('/') }}" class="md-button md-button--primary return-btn">
+    Back to home
+  </a>
+</div>
+
+<style>
+  .error-container {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Khung chứa đĩa bay */
+  .ufo-space {
+    position: relative;
+    height: 180px;
+    margin-bottom: 20px;
+  }
+
+  /* Hiệu ứng 1: Đĩa bay bồng bềnh lên xuống */
+  .ufo-ship {
+    animation: ufoFloat 3.5s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  @keyframes ufoFloat {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(1.5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+
+  /* Hiệu ứng 2: Luồng sáng co giãn mờ ảo đồng bộ với đĩa bay */
+  .tractor-beam {
+    animation: beamGlow 3.5s ease-in-out infinite;
+    transform-origin: top center;
+  }
+
+  @keyframes beamGlow {
+    0% { opacity: 0.7; transform: scaleX(1); }
+    50% { opacity: 1; transform: scaleX(1.1); }
+    100% { opacity: 0.7; transform: scaleX(1); }
+  }
+
+  /* Hiệu ứng 3: Đèn nhấp nháy so le nhau */
+  .ufo-light {
+    animation: lightBlink 1s infinite alternate;
+  }
+  .l1, .l3, .l5 { fill: #ffeb3b; animation-delay: 0s; }
+  .l2, .l4 { fill: #00e5ff; animation-delay: 0.5s; }
+
+  @keyframes lightBlink {
+    0% { opacity: 0.3; filter: drop-shadow(0 0 0px #fff); }
+    100% { opacity: 1; filter: drop-shadow(0 0 4px #fff); }
+  }
+
+  /* Định dạng chữ nghĩa */
+  .error-title {
+    font-size: 5rem;
+    line-height: 1;
+    margin: 0;
+    font-weight: 900;
+    background: linear-gradient(45deg, #00e5ff, #7e57c2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .error-subtitle {
+    font-size: 1.4rem;
+    margin: 15px 0 10px 0;
+    color: var(--md-typeset-color);
+  }
+
+  .error-text {
+    font-size: 1rem;
+    color: #757575;
+    margin-bottom: 30px;
+  }
+
+  .return-btn {
+    transition: all 0.3s ease;
+  }
+  
+  .return-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
+  }
+</style>
+
+{% endblock %}
+
+{% block content_right %}{% endblock %}
