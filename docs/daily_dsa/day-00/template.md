@@ -1,3 +1,10 @@
+---
+categories:
+  - daily_dsa
+title: "Day 0: template"
+tags: 
+  - template
+---
 # TITLE OF PROBLEM
 Description of problem
 

@@ -13,15 +13,35 @@ Input : Parameters and Boundaries
 Output : Result
 
 ## Example
-Example of the input and output
+
+**Input:** `n = 3`
+
+**Binary search tree:**
+
+```mermaid
+flowchart TD
+4 --> 2 --> 1 
+4 --> 5
+2 --> 3
+```
+
+**Output:** `true`
 
 ## Hint
-Idea to solve the problems
 
-`Formula here`
+Use Breadth First Search (BFS) to traverse the entire tree.
 
-## Explanation
 
-Some explanations based on idea and formula. 
+## Implementation
 
-Note some crazy ideas
+### C/C++
+
+=== "Solution 1"
+    ```cpp title="day4-1.cpp"
+    --8<-- "docs/daily_dsa/day-04/day4-1.cpp"
+    ```
+
+=== "Solution 2"
+    ```cpp title="day4-2.cpp"
+    --8<-- "docs/daily_dsa/day-04/day4-2.cpp"
+    ```
