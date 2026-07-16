@@ -14,9 +14,13 @@ Output : Array of two indices of integers needed to find.
 
 ## Example
 
+**Input:**
+
 `numbers=[1,2,3,4,5]`
 
 `target=6`
+
+**Output:**
 
 `result=[1,3]`
 
