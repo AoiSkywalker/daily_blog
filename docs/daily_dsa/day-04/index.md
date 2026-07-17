@@ -3,7 +3,9 @@ categories:
   - daily_dsa
 title: "Day 4: Two Sum - BST Version"
 tags: 
-  - template
+  - sum
+  - BST
+  - BFS
 ---
 # DAY 4: TWO SUM - BST VERSION
 
