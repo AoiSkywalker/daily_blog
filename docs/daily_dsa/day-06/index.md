@@ -6,7 +6,7 @@ tags:
   - sum
   - two pointer
 ---
-# DAY 5: 3 SUM
+# DAY 6: 3 SUM CLOSEST
 
 Given an array `S` of `n` integers, are there elements `a`, `b`, `c` in `S` such that the sum is closest to a given number, target. Return the sum of the three integers
 
