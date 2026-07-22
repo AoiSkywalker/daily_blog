@@ -2,5 +2,6 @@ nav:
   - Home: index.md
   - daily_dsa
   - daily_cyber
+  - project_euler
   - Tags: tags.md
   - About Me: about.md

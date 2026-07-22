@@ -49,6 +49,9 @@ plugins:
       collapse_single_pages: true
 
 # extra:
+#   mermaid:
+#     config:
+#       layout: elk
   # tags:
     # <tag>: <identifier>
 
