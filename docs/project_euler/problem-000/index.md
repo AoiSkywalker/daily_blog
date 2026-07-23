@@ -30,12 +30,7 @@ Among the first 599 thousand square numbers, what is the sum of all the odd squa
 
 **Idea:** To iterate through first $n$ odd numbers, square each, and accumulate sum.
 
-
-
-
-### Expected approach
-
-**Method:** Direct formula
+### Formula approach
 
 **Time:** $O(1)$
 
@@ -80,11 +75,11 @@ $35820299833233500$
 ### C/C++
 
 === "Naive approach"
-    ``` cpp title="problem-000-1.cpp"
+    ``` cpp
     --8<-- "docs/project_euler/problem-000/problem000-1.cpp"
     ```
 
 === "Formula approach"
-    ``` cpp title="problem-000-2.cpp"
+    ``` cpp 
     --8<-- "docs/project_euler/problem-000/problem000-2.cpp"
     ```
