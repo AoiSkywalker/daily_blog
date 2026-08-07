@@ -52,26 +52,26 @@ App Server
 
     | CWE | Weakness Name | Note |
     | :--- | :--- | :--- |
-    | **CWE-79** | | |
-    | **CWE-80** | | |
-    | **CWE-81** | | |
-    | **CWE-82** | | |
-    | **CWE-83** | | |
-    | **CWE-84** | | |
-    | **CWE-85** | | |
-    | **CWE-86** | | |
-    | **CWE-87** | | |
-    | **CWE-116** | | |
-    | **CWE-346** | | |
-    | **CWE-352** | | |
-    | **CWE-601** | | |
-    | **CWE-602** | | |
-    | **CWE-798** | | |
-    | **CWE-830** | | |
-    | **CWE-924** | | |
-    | **CWE-1021** | | |
-    | **CWE-1022** | | |
-    | **CWE-1173** | | |
+    | **CWE-79** | Improper Neutralization of Input During Web Page Generation | Cross-Site Scripting |
+    | **CWE-80** | Improper Neutralization of Script-Related HTML Tags in a Web Page | Basic XSS |
+    | **CWE-81** | Improper Neutralization of Script in an Error Message Web Page | |
+    | **CWE-82** | Improper Neutralization of Script in Attributes of IMG Tags in a Web Page | |
+    | **CWE-83** | Improper Neutralization of Script in Attributes in a Web Page | |
+    | **CWE-84** | Improper Neutralization of Encoded URI Schemes in a Web Page | |
+    | **CWE-85** | Doubled Character XSS Manipulations | |
+    | **CWE-86** | Improper Neutralization of Invalid Characters in Identifiers in Web Pages | |
+    | **CWE-87** | Improper Neutralization of Alternate XSS Syntax | |
+    | **CWE-116** | Improper Encoding or Escaping of Output | |
+    | **CWE-346** | Origin Validation Error | |
+    | **CWE-352** | Cross-Site Request Forgery | CSRF |
+    | **CWE-601** | URL Redirection to Untrusted Site | Open Redirect |
+    | **CWE-602** | Client-Side Enforcement of Server-Side Security | |
+    | **CWE-798** | Use of Hard-coded Credentials | |
+    | **CWE-830** | Inclusion of Web Functionality from an Untrusted Source | |
+    | **CWE-924** | Improper Enforcement of Message Integrity During Transmission in a Communication Channel | |
+    | **CWE-1021** | Improper Restriction of Rendered UI Layers or Frames | |
+    | **CWE-1022** | Use of Web Link to Untrusted Target with window.opener Access | |
+    | **CWE-1173** | Improper Use of Validation Framework | |
 
 === "Group 3: Authentication"
 

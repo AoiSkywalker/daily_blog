@@ -3,8 +3,8 @@ categories:
   - daily_cwe
 title: "CWE-444: HTTP Request/Response Smuggling"
 tags: 
-  - CWE-1321
-  - prototype pollution
+  - CWE-444
+  - http smuggling
 ---
 # INCONSISTENT INTERPRESTATION OF HTTP REQUESTS
 
@@ -53,11 +53,10 @@ HTTP Smugging was established to circumvent mitifations against HTTP Splitting t
 
 ### Potential Mitigations
 
-1. Freezing object prototype first, modification of the prototype becomes impossible. <span style="color: green">Effective: High</span>
-2. Blocking modications of attributes that resolve to object prototype (in architecture and design). <span style="color: green">Effective: High</span>
-3. Input validation. <span style="color: red">Effective: Limited</span>
-4. Using an object without prototypes, adding object prototype attributes by accessing the prototype via the special attributes becomes impossible. <span style="color: green">Effective: High</span>
-5. Map can be used instead of objects in most cases. <span style="color: orange">Effective: Moderate</span>
+1. Use a web server that employs a strict HTTP parsing procedure, such as Apache.
+2. Use only SSL communication
+3. Terminate client session after each request
+4. Turn all pages to non-cacheable
 
 ## Implementation
 
@@ -96,11 +95,11 @@ printf "POST / HTTP/1.1\r\nHost: localhost\r\nContent-Length: 0 \r\n\r\nGET /adm
 
 ### Explanation
 
-To bypass WAF, we use **HTTP Kepp-Alive / Pipelining** in the innocence of proxy.
+To bypass WAF, we use **HTTP Keep-Alive / Pipelining** in the innocence of proxy.
 
 Instead of sending 1 request, we merge 2 requests into 1 TCP payload. Proxy only checks the first line, but does not check the later; while backend (`http` standart of Node.js) will separate raw bytes into 2 distinct valid requests and will return 2 responses (1st response is blocked by WAF, and 2nd response is benignly processed by backend).
 
-## Defense
+### Defense
 
 Since frontend proxy is used by module `net` (layer 4 - TCP) instead of module `http` (layer 7 - Application), the data is processed as raw TCP stream and proxy cannot understand the structure of HTTP request as well as TE/CL.
 

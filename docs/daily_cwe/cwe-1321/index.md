@@ -25,6 +25,14 @@ Impact : Server-Side Prototype Pollution (SSPP) with gadget chain (such as `ejs`
 | **CVE-2019-10744** | Prototype pollution by setting default values to object attributes recursively |
 | **CVE-2018-3721** | Prototype pollution by merging objects |
 
+### Potential Mitigations
+
+1. Freezing object prototype first, modification of the prototype becomes impossible. <span style="color: green">Effective: High</span>
+2. Blocking modications of attributes that resolve to object prototype (in architecture and design). <span style="color: green">Effective: High</span>
+3. Input validation. <span style="color: red">Effective: Limited</span>
+4. Using an object without prototypes, adding object prototype attributes by accessing the prototype via the special attributes becomes impossible. <span style="color: green">Effective: High</span>
+5. Map can be used instead of objects in most cases. <span style="color: orange">Effective: Moderate</span>
+
 ## Implementation
 
 ### Basic project structure
@@ -104,9 +112,9 @@ curl -i -XPOST http://localhost:3000/api/settings \
 
 EJS (version < **3.1.10**), `render` function using config variable `outputNameFunction`. If this variable is polluteed, EJS does not sanitize, it leads to Code Injection
 
-## Defense
+### Defense
 
-### 1. Sanitize dangerous recursive keys
+#### 1. Sanitize dangerous recursive keys
 
 ```js
 if (key === '__proto__' || key === 'consstructor' || key === 'prototype') {
@@ -114,18 +122,18 @@ if (key === '__proto__' || key === 'consstructor' || key === 'prototype') {
 }
 ```
 
-### 2. Using `Map` or Object without Prototype
+#### 2. Using `Map` or Object without Prototype
 
 ```js
 const safeObject = Object.create(null);
 ```
 
-### 3. Using `Object.freeze()`
+#### 3. Using `Object.freeze()`
 
 ```js
 Object.freeze(Object.prototype);
 ```
 
-### 4. Update 
+#### 4. Update 
 
 Update EJS > 3.1.10
