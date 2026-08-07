@@ -8,15 +8,24 @@ tags:
 ---
 # IMPROPERLY CONTROLLED MODIFICATION OF OBJECT PROTOTYPE ATTRIBUTES
 
+## Description
+
+The product receives input from an upstream component that specifies attributes that are to be initialized or updated in an object, but it does not properly control modifications of attributes of the object prototype.
+
 Special keys (`__proto__`, `constructor`) can be overriden by user
 
-Impact : Server-Sdie Prototype Pollution (SSPP) with gadget chain (such as `ejs`, `pug`, `child_process`) can lead to RCE
+Impact : Server-Side Prototype Pollution (SSPP) with gadget chain (such as `ejs`, `pug`, `child_process`) can lead to RCE
 
-Input : Parameters and Boundaries
-Output : Result
+### Selected Observed Examples
+
+| CVE | Note |
+| :--- | :--- |
+| **CVE-2020-8203** | Prototype polution by setting object attributes based on dot-separated path |
+| **CVE-2019-11358** | Prototype pollution by merging objects recursively |
+| **CVE-2019-10744** | Prototype pollution by setting default values to object attributes recursively |
+| **CVE-2018-3721** | Prototype pollution by merging objects |
 
 ## Implementation
-
 
 ### Basic project structure
 ```
@@ -91,15 +100,32 @@ curl -i -XPOST http://localhost:3000/api/settings \
      }'
 ```
 
-Result :
-`id > /tmp/pwned` 
-
 ### Explanation
 
 EJS (version < **3.1.10**), `render` function using config variable `outputNameFunction`. If this variable is polluteed, EJS does not sanitize, it leads to Code Injection
 
 ## Defense
 
-Some explanations based on idea and formula. 
+### 1. Sanitize dangerous recursive keys
 
-Note some crazy ideas
+```js
+if (key === '__proto__' || key === 'consstructor' || key === 'prototype') {
+  continue;
+}
+```
+
+### 2. Using `Map` or Object without Prototype
+
+```js
+const safeObject = Object.create(null);
+```
+
+### 3. Using `Object.freeze()`
+
+```js
+Object.freeze(Object.prototype);
+```
+
+### 4. Update 
+
+Update EJS > 3.1.10
