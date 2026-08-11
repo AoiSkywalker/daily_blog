@@ -1,0 +1,21 @@
+/**
+ *  Two Sum - Input Array is sorted
+ */
+
+class Solution {
+    public:
+        vector<int> twoSum(vector<int> &numbes, int target) {
+            vector<int> result;
+            int low = 0, high = numbers.size() - 1;
+            while (low < high) {
+                if (numbers[low] + numbers[high] == target) {
+                    result.push_back(low + 1);
+                    result.push_back(high + 1);
+                    return result;
+                } else {
+                    numbers[low] + numbers[high] > target ? --high : ++low;
+                }
+            }
+            return result;
+        }
+};
