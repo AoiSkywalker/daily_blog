@@ -98,13 +98,9 @@ http://localhost:5000/?name={{''.__class__.__mro__[1].__subclasses__()[412]().ge
 http://localhost:5000/?name={% for c in ''.__class__.__mro__[1].__subclasses__() %}{% if c.__name__ == 'CTFFlagHolder' %}{{ c().get_flag() }}{% endif %}{% endfor %}
 ```
 
-### Explanation
-
-Explain something
-
 ### Defense
 
-1. Passing data by Context Parameters
+#### 1. Passing data by Context Parameters
 
 Instead of concatenating unsafely, pass the data in `render_template_string` or `render_template` function. The code below makes `user_name` become string variable.
 
@@ -115,7 +111,7 @@ def index():
     return render_template_string("<h1>Hello, {{ user_name }}</h1>", user_name=name)
 ```
 
-2. Sandboxing
+#### 2. Sandboxing
 
 Using sandbox environment such as `SandboxedEnvironment` in Jinja2 to limit the dangerous properties like `__class__`, `__globals__`
 
